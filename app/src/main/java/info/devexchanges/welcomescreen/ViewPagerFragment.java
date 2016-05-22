@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ViewPagerFragment extends Fragment {
@@ -36,7 +37,9 @@ public class ViewPagerFragment extends Fragment {
         TextView title = (TextView)rootView.findViewById(R.id.title);
         TextView content = (TextView)rootView.findViewById(R.id.content);
         View relativeLayout = rootView.findViewById(R.id.container);
+        ImageView image = (ImageView)rootView.findViewById(R.id.logo);
 
+        image.setImageResource(R.drawable.logo);
         relativeLayout.setBackgroundColor(getResources().getColor(getArguments().getInt("background")));
         title.setText("Welcome, this is Page: " + (getArguments().getInt("position") + 1));
         content.setText(getString(R.string.lorem_ipsum));
